@@ -1,5 +1,8 @@
 # Assortment of graph theoretic methods.
 
+# TODO
+# Kirkhoff polynomials methods.
+
 
 # Generate simple planar graphs with a particular number of edges.
 # These correspond to Mondrian tilings with a particular number of rectangles.
@@ -25,7 +28,7 @@ def simple_planar_graphs(num_edges, verbose=False):
         # This is SageMath's built-in function.
         for G in graphs.planar_graphs(num_vertices):
 
-            # We only want "simple" or "3-connected" graphs.
+            # We only want "simple" graphs.
             if any(d < 3 for d in G.degree()):
                 if verbose:
                     print('      Not simple:', G.edges(labels=False))
@@ -89,3 +92,8 @@ def edge_orbits(G, verbose=False):
         orbits.append(new_orbit)
 
     return orbits
+
+
+# Input: directed graph D, with set planar embedding, distinguished edge e.
+def kirkhoff_polynomials(D, e):
+    return 'TODO'
